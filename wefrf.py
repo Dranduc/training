@@ -1,17 +1,4 @@
-filel = input("фио оценка")
-f = open('фио оценка.txt', 'r')
-content = f.read()
-f.close()
-content = content.split("\n")
-pupils = []
-for line in content:
-    line = line.split(" ")
-    pupils.append([line[0], line[1], int(line[2])])
-    srednia = 0
-    print("Ниже 3 баллов:")
-for p in pupils:
-    srednia += int(p[2])
-    if p[2] < 3:
-        print(f"{p[0]} {p[1]}: {p[2]}")
-        srednia /= len(pupils)
-print(f"Средняя оценка по классу: {srednia}")
+base_drop = 10
+drop_amount = 10
+# от 7 до 14 дропа должно выпасть с шансом в 10%(не учитывая модификаторов)
+# если шанс выше 100% то нужно давать больше лута, условно при 200 давать от 14 до 28
